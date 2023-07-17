@@ -57,6 +57,18 @@ To start the project, navigate to the project directory and run the following co
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+## Credits
+
+- The fox images used in this project are derived from the ["Emoticons"](https://opengameart.org/content/emoticons) asset pack by [aeynit](https://opengameart.org/users/aeynit), used under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
+  - `f_angry.png`
+  - `f_dead.png`
+  - `f_happy.png`
+  - `f_nha.png`
+  - `f_noise.png`
+  - `f_normal.png`
+  - `f_sad.png`
+  - `f_sleep.png`
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
