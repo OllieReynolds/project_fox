@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import { Button } from 'react-native-paper';
 
-import foxImage from '../assets/fox.png';
+import foxImage from '../assets/f_normal.png';
 
 export default function MainScreen() {
   return (
