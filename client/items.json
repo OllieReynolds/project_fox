@@ -1,0 +1,129 @@
+[
+    {
+      "id": 1,
+      "name": "Apple",
+      "description": "Restores hunger by 10%",
+      "price": 5,
+      "effect": { "hunger": 0.1 }
+    },
+    {
+      "id": 2,
+      "name": "Fish Treat",
+      "description": "Restores hunger and happiness by 10%",
+      "price": 10,
+      "effect": { "hunger": 0.1, "happiness": 0.1 }
+    },
+    {
+      "id": 3,
+      "name": "Deluxe Meal",
+      "description": "Restores hunger, happiness, and health by 20%",
+      "price": 20,
+      "effect": { "hunger": 0.2, "happiness": 0.2, "health": 0.2 }
+    },
+    {
+      "id": 4,
+      "name": "Ball",
+      "description": "Increases happiness by 10%",
+      "price": 15,
+      "effect": { "happiness": 0.1 }
+    },
+    {
+      "id": 5,
+      "name": "Plushie",
+      "description": "Increases happiness by 10% and health by 5%",
+      "price": 25,
+      "effect": { "happiness": 0.1, "health": 0.05 }
+    },
+    {
+      "id": 6,
+      "name": "Puzzle Toy",
+      "description": "Increases happiness and intelligence by 10%",
+      "price": 30,
+      "effect": { "happiness": 0.1, "intelligence": 0.1 }
+    },
+    {
+      "id": 7,
+      "name": "Brush",
+      "description": "Increases health by 5% and happiness by 5%",
+      "price": 10,
+      "effect": { "health": 0.05, "happiness": 0.05 }
+    },
+    {
+      "id": 8,
+      "name": "Shampoo",
+      "description": "Increases health and happiness by 10%",
+      "price": 15,
+      "effect": { "health": 0.1, "happiness": 0.1 }
+    },
+    {
+      "id": 9,
+      "name": "Spa Package",
+      "description": "Increases health, happiness, and cleanliness by 20%",
+      "price": 35,
+      "effect": { "health": 0.2, "happiness": 0.2, "cleanliness": 0.2 }
+    },
+    {
+      "id": 10,
+      "name": "Cozy Bed",
+      "description": "Increases health and comfort by 10%",
+      "price": 25,
+      "effect": { "health": 0.1, "comfort": 0.1 }
+    },
+    {
+      "id": 11,
+      "name": "Playful Scratching Post",
+      "description": "Increases happiness and fitness by 10%",
+      "price": 20,
+      "effect": { "happiness": 0.1, "fitness": 0.1 }
+    },
+    {
+      "id": 12,
+      "name": "Luxury Pet House",
+      "description": "Increases happiness, comfort, and style by 20%",
+      "price": 40,
+      "effect": { "happiness": 0.2, "comfort": 0.2, "style": 0.2 }
+    },
+    {
+      "id": 13,
+      "name": "Stylish Collar",
+      "description": "Increases style by 10%",
+      "price": 15,
+      "effect": { "style": 0.1 }
+    },
+    {
+      "id": 14,
+      "name": "Trendy Bandana",
+      "description": "Increases style and happiness by 10%",
+      "price": 20,
+      "effect": { "style": 0.1, "happiness": 0.1 }
+    },
+    {
+      "id": 15,
+      "name": "Fancy Costume",
+      "description": "Increases style, happiness, and cuteness by 20%",
+      "price": 45,
+      "effect": { "style": 0.2, "happiness": 0.2, "cuteness": 0.2 }
+    },
+    {
+      "id": 16,
+      "name": "Medicine Kit",
+      "description": "Restores health by 10%",
+      "price": 15,
+      "effect": { "health": 0.1 }
+    },
+    {
+      "id": 17,
+      "name": "First Aid Supplies",
+      "description": "Restores health and provides faster recovery by 10%",
+      "price": 30,
+      "effect": { "health": 0.1, "recovery": 0.1 }
+    },
+    {
+      "id": 18,
+      "name": "Vet Checkup Voucher",
+      "description": "Restores health and happiness, and grants immunity for a limited time",
+      "price": 50,
+      "effect": { "health": 0.2, "happiness": 0.2, "immunity": true }
+    }
+  ]
+  

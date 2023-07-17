@@ -3,46 +3,50 @@ import { View, StyleSheet, Image, Button } from 'react-native';
 import { Button as PaperButton } from 'react-native-paper';
 import foxImage from '../assets/f_normal.png';
 import { StatsContext } from '../StatsContext';
+import StatsDisplay from './StatsDisplay';
 
 export default function MainScreen({ navigation }) {
-    const { hunger, setHunger, happiness, setHappiness, health, setHealth } = React.useContext(StatsContext);
+    const { stats, setStats } = React.useContext(StatsContext);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setHunger(hunger => Math.max(hunger - 0.07, 0));
-            setHappiness(happiness => Math.max(happiness - 0.1, 0));
-            setHealth(health => Math.max(health - 0.025, 0));
+            setStats(currentStats => {
+                let newStats = { ...currentStats };
+                for (let key in newStats) {
+                    if (newStats[key] > 0 && key !== 'currency') {
+                        newStats[key] = Math.max(newStats[key] - 0.01, 0);
+                    }
+                }
+                return newStats;
+            });
         }, 5000);
         return () => clearInterval(interval);
     }, []);
 
+    const incrementStat = (key) => {
+        setStats(currentStats => ({
+            ...currentStats,
+            [key]: Math.min(1.0, currentStats[key] + 0.1)
+        }));
+    };
+
     return (
         <View style={styles.container}>
+            <StatsDisplay />
             <Image source={foxImage} style={styles.image} />
-            <PaperButton
-                mode='contained'
-                style={styles.button}
-                onPress={() => setHunger(1.0)}
-            >
-                Feed Fox
-            </PaperButton>
-            <PaperButton
-                mode='contained'
-                style={styles.button}
-                onPress={() => setHappiness(1.0)}
-            >
-                Play With Fox
-            </PaperButton>
-            <PaperButton
-                mode='contained'
-                style={styles.button}
-                onPress={() => setHealth(1.0)}
-            >
-                Boost Fox Health
-            </PaperButton>
+            {['hunger', 'happiness', 'health'].map(stat => (
+                <PaperButton
+                    key={stat}
+                    mode='contained'
+                    style={styles.button}
+                    onPress={() => incrementStat(stat)}
+                >
+                    Boost {stat.charAt(0).toUpperCase() + stat.slice(1)}
+                </PaperButton>
+            ))}
             <Button
-                title='See Stats'
-                onPress={() => navigation.navigate('Stats')}
+                title='Visit Store'
+                onPress={() => navigation.navigate('Store')}
             />
         </View>
     );
