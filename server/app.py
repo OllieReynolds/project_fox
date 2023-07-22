@@ -1,10 +1,17 @@
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from os import getenv, environ
+from os.path import join, dirname
+from dotenv import load_dotenv
+import os
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 app = Flask(__name__)
 if getenv('FLASK_ENV') == 'development':
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+    basedir = os.path.abspath(os.path.dirname(__file__))
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'test.db')
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
 
@@ -100,5 +107,6 @@ def purchase_item(item_id):
     return jsonify({"message": f"Item {item.name} purchased successfully"}), 200
 
 if __name__ == '__main__':
-    db.create_all()
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)
